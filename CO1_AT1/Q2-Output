@@ -1,0 +1,41 @@
+========================================
+1. Exact Keyword Search
+========================================
+Samsung Galaxy
+Total Matches : 1
+
+========================================
+2. Prefix Search
+========================================
+Apple iPhone
+Apple Watch
+Total Matches : 2
+
+========================================
+3. Suffix Search
+========================================
+Dell Laptop
+HP Laptop
+Lenovo Laptop
+Total Matches : 3
+
+========================================
+4. Partial Keyword Search
+========================================
+Wireless Mouse
+Gaming Mouse
+Total Matches : 2
+
+========================================
+5. Case-Insensitive Search
+========================================
+Apple Watch
+Smart Watch
+Total Matches : 2
+
+========== SEARCH REPORT ==========
+Exact Keyword Matches : 1
+Prefix Search Matches : 2
+Suffix Search Matches : 3
+Partial Keyword Matches : 2
+Case-Insensitive Matches : 2
