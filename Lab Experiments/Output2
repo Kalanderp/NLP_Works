@@ -1,0 +1,4 @@
+Enter a string: Soap
+Rejected
+Enter a string: Soab
+Accepted (Ends with 'ab')
