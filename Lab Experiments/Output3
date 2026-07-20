@@ -1,0 +1,20 @@
+[nltk_data] Downloading package wordnet to
+[nltk_data]     C:\Users\user\AppData\Roaming\nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+Morphological Analysis
+
+Original Word:  running
+Stem:  run
+Lemma:  running
+
+Original Word:  jumps
+Stem:  jump
+Lemma:  jump
+
+Original Word:  easily
+Stem:  easili
+Lemma:  easily
+
+Original Word:  fairly
+Stem:  fairli
+Lemma:  fairly
