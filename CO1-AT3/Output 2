@@ -1,0 +1,25 @@
+Input: abaab
+Transition Path:
+q0 → q1 → q2 → q1 → q1 → q2
+Accepted
+----------------------------------------
+Input: ab
+Transition Path:
+q0 → q1 → q2
+Accepted
+----------------------------------------
+Input: aab
+Transition Path:
+q0 → q1 → q1 → q2
+Accepted
+----------------------------------------
+Input: baba
+Transition Path:
+q0 → q0 → q1 → q2 → q1
+Rejected
+----------------------------------------
+Input: aaabb
+Transition Path:
+q0 → q1 → q1 → q1 → q2 → q0
+Rejected
+----------------------------------------
