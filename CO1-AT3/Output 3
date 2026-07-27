@@ -1,0 +1,78 @@
+User Menu
+1. Search Date
+2. Search Phone Number
+3. Search Hashtag
+4. Search Mention
+5. Search Prefix
+6. Search Suffix
+7. Exit
+Enter your choice: 1
+Dates found: ['12/09/2026']
+
+User Menu
+1. Search Date
+2. Search Phone Number
+3. Search Hashtag
+4. Search Mention
+5. Search Prefix
+6. Search Suffix
+7. Exit
+Enter your choice: 2
+Phone Numbers found: ['9876543210']
+
+User Menu
+1. Search Date
+2. Search Phone Number
+3. Search Hashtag
+4. Search Mention
+5. Search Prefix
+6. Search Suffix
+7. Exit
+Enter your choice: 3
+Hashtags found: ['#NLP']
+
+User Menu
+1. Search Date
+2. Search Phone Number
+3. Search Hashtag
+4. Search Mention
+5. Search Prefix
+6. Search Suffix
+7. Exit
+Enter your choice: 4
+Mentions found: ['@OpenAI']
+
+User Menu
+1. Search Date
+2. Search Phone Number
+3. Search Hashtag
+4. Search Mention
+5. Search Prefix
+6. Search Suffix
+7. Exit
+Enter your choice: 5
+Enter prefix: ing
+Words with prefix: []
+
+User Menu
+1. Search Date
+2. Search Phone Number
+3. Search Hashtag
+4. Search Mention
+5. Search Prefix
+6. Search Suffix
+7. Exit
+Enter your choice: 6
+Enter suffix: played
+Words with suffix: []
+
+User Menu
+1. Search Date
+2. Search Phone Number
+3. Search Hashtag
+4. Search Mention
+5. Search Prefix
+6. Search Suffix
+7. Exit
+Enter your choice: 7
+Exiting...
