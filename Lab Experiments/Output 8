@@ -1,0 +1,11 @@
+Enter sentence: I Have been working on soo many porojects
+
+Stochastic POS Tags:
+I -> PRP
+Have -> NN
+been -> NN
+working -> NN
+on -> NN
+soo -> NN
+many -> NN
+porojects -> NN
