@@ -1,0 +1,9 @@
+Enter sentence: I can do my level best
+
+Rule-Based POS Tags:
+I -> NN
+can -> NN
+do -> NN
+my -> NN
+level -> NN
+best -> NN
