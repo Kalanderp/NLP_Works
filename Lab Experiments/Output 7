@@ -1,0 +1,14 @@
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\user\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package averaged_perceptron_tagger_eng to
+[nltk_data]     C:\Users\user\AppData\Roaming\nltk_data...
+[nltk_data]   Package averaged_perceptron_tagger_eng is already up-to-
+[nltk_data]       date!
+Enter a sentence: The cat eating fish
+
+POS Tags:
+The -> DT
+cat -> NN
+eating -> VBG
+fish -> JJ
