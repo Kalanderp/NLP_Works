@@ -1,0 +1,8 @@
+Enter sentence: The boy is playing football
+
+Transformation-Based POS Tags:
+The -> DT
+boy -> NN
+is -> VB
+playing -> VBG
+football -> NN
