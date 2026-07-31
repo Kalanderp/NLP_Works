@@ -1,0 +1,34 @@
+Q1
+Word           Root      Suffix    Type           Parsed Structure    Normalized     
+------------------------------------------------------------------------------------------
+connected      connect   ed        Inflectional   connect + ed        connect        
+connecting     connect   ing       Inflectional   connect + ing       connect        
+connection     connect   ion       Derivational   connect + ion       connect        
+
+Q2
+Word        Prefix    Root      Suffix    Type           Morphological Breakdown  Normalized
+----------------------------------------------------------------------------------------------------
+unhappy     un        happy     -         Derivational   un + happy               happy     
+happiness   -         happy     ness      Derivational   happy + ness             happy     
+happily     -         happy     ly        Derivational   happy + ly               happy     
+
+Q3
+Word        Removed Affix  Stem      Transformation    Normalized  
+---------------------------------------------------------------------------
+played      ed             play      Inflectional      play        
+player      er             play      Derivational      play        
+playing     ing            play      Inflectional      play        
+
+Q4
+Word        State Transition                   Breakdown           Pattern           Root      Normalized     
+------------------------------------------------------------------------------------------------------------------------
+writes      START -> write -> +s -> END        write + s           Regular Inflection write     write          
+writing     START -> write -> +ing -> END      write + ing         Regular Inflection write     write          
+written     START -> write -> irregular(en) -> ENDwrite + en       Irregular Inflection write     write          
+
+Q5
+Original Word  Applied Rule                       Intermediate Form   Final Stem     
+------------------------------------------------------------------------------------------
+relational     Remove -ational, then remove e     relate              relat          
+relation       Remove -ion                        relat               relat          
+relate         Remove final e                     relat               relat          
