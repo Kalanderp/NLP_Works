@@ -1,0 +1,4 @@
+Word           Prefix  Root    Suffix      Sequence                                Meaning             Normalized
+activate               act     -ivate      act → activate                          Verb                act       
+activation             act     -ivation    act → activate → activation             Noun                act       
+reactivation   re-     act     -ivation    act → activate → activation → reactivationRepeat activation   act       
