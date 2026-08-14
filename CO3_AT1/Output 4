@@ -1,0 +1,4 @@
+Input: The student reads a book quickly
+Rule-Based: [('the', 'DT'), ('student', 'NN'), ('reads', 'VBZ'), ('a', 'DT'), ('book', 'NN'), ('quickly', 'RB')]
+Stochastic: [('the', 'DT'), ('student', 'NN'), ('reads', 'VBZ'), ('a', 'DT'), ('book', 'NN'), ('quickly', 'VBZ')]
+Transformation-Based: [('the', 'DT'), ('student', 'NN'), ('reads', 'VBZ'), ('a', 'DT'), ('book', 'NN'), ('quickly', 'RB')]
