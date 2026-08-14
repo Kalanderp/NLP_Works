@@ -1,0 +1,35 @@
+======================================================================
+WORD SENSE DISAMBIGUATION IN E-COMMERCE
+======================================================================
+
+Query: Apple accessories
+Clicked Result: iPhone Charger
+Possible Senses: ['Fruit', 'Technology Brand']
+Scores: {'Fruit': 0, 'Technology Brand': 2}
+Correct Sense: Technology Brand
+
+Query: Mouse wireless
+Clicked Result: Bluetooth Mouse
+Possible Senses: ['Animal', 'Computer Device']
+Scores: {'Animal': 0, 'Computer Device': 2}
+Correct Sense: Computer Device
+
+Query: Java tutorial
+Clicked Result: Coding Lessons
+Possible Senses: ['Island', 'Programming Language']
+Scores: {'Island': 0, 'Programming Language': 2}
+Correct Sense: Programming Language
+
+Query: Python course
+Clicked Result: Software Development Training
+Possible Senses: ['Snake', 'Programming Language']
+Scores: {'Snake': 0, 'Programming Language': 2}
+Correct Sense: Programming Language
+
+======================================================================
+FINAL RESULTS
+======================================================================
+Apple accessories         -> Technology Brand
+Mouse wireless            -> Computer Device
+Java tutorial             -> Programming Language
+Python course             -> Programming Language
