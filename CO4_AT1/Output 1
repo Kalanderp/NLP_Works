@@ -1,0 +1,41 @@
+SEMANTIC REPRESENTATIONS
+--------------------------------------------------
+Query: Activate international roaming
+Action: ACTIVATE
+Object: Roaming
+Representation: ACTIVATE(Roaming, Customer)
+
+Query: Deactivate caller tune
+Action: DEACTIVATE
+Object: CallerTune
+Representation: DEACTIVATE(CallerTune, Customer)
+
+Query: Check data balance
+Action: QUERY
+Object: DataBalance
+Representation: QUERY(DataBalance, Customer)
+
+Query: Enable 5G service
+Action: ACTIVATE
+Object: 5GService
+Representation: ACTIVATE(5GService, Customer)
+
+INTENT ANALYSIS
+--------------------------------------------------
+Q1 : Correct
+Actual   : Activate Roaming
+Predicted: Activate Roaming
+
+Q2 : Error
+Actual   : Deactivate Caller Tune
+Predicted: Activate Caller Tune
+
+Q3 : Correct
+Actual   : Check Data Balance
+Predicted: Query Data Balance
+
+Q4 : Correct
+Actual   : Enable 5G Service
+Predicted: Activate 5G Service
+
+Semantic Error: Q2
