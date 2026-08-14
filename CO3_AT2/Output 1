@@ -1,0 +1,6 @@
+P(science | data) = 1.0
+Backoff P(improves) = 0.05
+Backoff sequence estimate = 0.05
+Interpolated P(is) = 0.5667
+P(data science is) = 0.1417
+Entropy = 0.9235 bits
