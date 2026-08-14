@@ -1,0 +1,14 @@
+Deleted-interpolation weights:
+Lambda 1 = 0.4117647058823529
+Lambda 2 = 0.47058823529411764
+Lambda 3 = 0.11764705882352941
+
+Top predictions:
+unsmoothed : [('solving', 0.2), ('learning', 0.2), ('writing', 0.2), ('preparing', 0.2), ('reading', 0.2)]
+backoff : [('the', 0.21153846153846154), ('solving', 0.2), ('learning', 0.2), ('writing', 0.2), ('preparing', 0.2)]
+deleted : [('preparing', 0.15701357466063348), ('reading', 0.15701357466063348), ('solving', 0.09027149321266968), ('learning', 0.09027149321266968), ('writing', 0.09027149321266968)]
+
+Unseen trigram example:
+Unsmoothed = 0.0
+Backoff = 0.0
+Interpolated = 0.0
