@@ -1,0 +1,10 @@
+Book a flight ticket now.
+Book/VB a/DT flight/NN ticket/NN now/RB ./.
+
+ This book is interesting.
+This/DT book/NN is/VBZ interesting/JJ ./.
+
+P(book, VB) = 0.3
+P(book, NN) = 0.2
+Simplified P(VB | book) = 0.6
+Preferred tag = VB
