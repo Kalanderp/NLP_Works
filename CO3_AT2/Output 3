@@ -1,0 +1,9 @@
+Corrected tags:
+economic/JJ growth/NN increases/VBZ employment/NN
+economic     count=120 probability=0.10345
+growth       count=450 probability=0.38793
+increases    count=210 probability=0.18103
+employment   count=380 probability=0.32759
+Frequency-distribution entropy = 1.8424 bits
+Illustrative entropy before rule = 1.0
+Illustrative entropy after rule = 0.2864
