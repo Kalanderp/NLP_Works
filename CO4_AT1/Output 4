@@ -1,0 +1,43 @@
+======================================================================
+SYNTAX-DRIVEN SEMANTIC ANALYSIS
+======================================================================
+
+Sentence: Doctor prescribed medicine to patient.
+----------------------------------------------------------------------
+Doctor               -> Agent
+medicine             -> Theme/Object
+patient              -> Recipient
+
+Sentence: Patient reported severe headache.
+----------------------------------------------------------------------
+Patient              -> Experiencer
+headache             -> Symptom
+
+Sentence: Nurse monitored patient continuously.
+----------------------------------------------------------------------
+Nurse                -> Agent
+patient              -> Patient/Theme
+
+Sentence: Medicine reduced blood pressure.
+----------------------------------------------------------------------
+Medicine             -> Cause
+blood pressure       -> Affected Entity
+
+======================================================================
+SEMANTIC ROLE VALIDATION
+======================================================================
+Doctor          | Given: Agent           | Correct: Agent           | VALID
+Medicine        | Given: Instrument      | Correct: Theme/Object    | ERROR
+Patient         | Given: Recipient       | Correct: Recipient       | VALID
+Headache        | Given: Symptom         | Correct: Symptom         | VALID
+
+======================================================================
+SUMMARY
+======================================================================
+Correct roles  : 3
+Incorrect roles: 1
+Role Accuracy  : 75.00%
+
+Main Error:
+Medicine was incorrectly assigned the role 'Instrument'.
+Correct role: Theme/Object
