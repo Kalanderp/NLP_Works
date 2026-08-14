@@ -1,0 +1,29 @@
+=================================================================
+BANKING CHATBOT - CFG / PCFG ANALYSIS
+=================================================================
+
+Input Sentence:
+Show me the transactions with the card from last month.
+
+Tokens:
+['show', 'me', 'the', 'transactions', 'with', 'the', 'card', 'from', 'last', 'month']
+
+Possible Interpretations:
+Transactions from last month made with the card -> Probability: 0.85
+Card from last month associated with transactions -> Probability: 0.15
+
+Most Probable Interpretation:
+Transactions from last month made with the card
+
+PCFG Decision:
+The first interpretation is selected because it has the highest probability.
+
+Feature Structure:
+Subject : {'Person': 'Third', 'Number': 'Singular'}
+Verb : {'Tense': 'Present'}
+
+Earley Parsing:
+Suitable for ambiguous, recursive and incomplete input.
+
+Final Decision:
+Show transactions made with the card during last month.
