@@ -1,0 +1,23 @@
+MACHINE STATUS
+----------------------------------------
+M1 : Active
+M2 : Active
+M3 : Maintenance
+M4 : Active
+
+PREDICATE INFERENCE
+----------------------------------------
+Active Machines: {'M1', 'M4', 'M2'}
+Producing Machines: {'M1', 'M4', 'M2'}
+Maintenance Machines: {'M3'}
+
+AVAILABLE PRODUCTS
+----------------------------------------
+Gear
+Shaft
+Bearing
+
+GEAR PRODUCTION ANALYSIS
+----------------------------------------
+M1 is active and producing Gear.
+M3 is under maintenance, so its Gear production is affected.
