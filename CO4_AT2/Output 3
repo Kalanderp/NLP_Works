@@ -1,0 +1,79 @@
+===========================================================================
+HEALTHCARE NLP SYSTEM
+===========================================================================
+
+1. TOKENS
+---------------------------------------------------------------------------
+['The', 'doctor', 'who', 'reviewed', 'the', 'patient', 'last', 'week', 'recommends', 'starting', 'medication', 'and', 'scheduling', 'a', 'follow-up', 'visit', 'in', 'Chennai']
+
+2. MEDICAL ENTITIES
+---------------------------------------------------------------------------
+Doctor          -> doctor
+Patient         -> patient
+Medication      -> medication
+Follow-up       -> follow-up visit
+Location        -> Chennai
+Time            -> last week
+
+3. FEATURE STRUCTURE
+---------------------------------------------------------------------------
+Subject : {'Word': 'doctor', 'Person': 'Third', 'Number': 'Singular'}
+Verb : {'Word': 'recommends', 'Person': 'Third', 'Number': 'Singular', 'Tense': 'Present'}
+
+Subject-Verb Agreement: Correct
+
+4. CFG-STYLE STRUCTURE
+---------------------------------------------------------------------------
+S
+|-- NP: The doctor
+|   |-- Relative Clause: who reviewed the patient last week
+|
+|-- VP: recommends
+    |-- VP: starting medication
+    |-- Conjunction: and
+    |-- VP: scheduling a follow-up visit in Chennai
+
+5. PCFG PARSE SELECTION
+---------------------------------------------------------------------------
+Doctor recommends both treatment and follow-up -> 0.9
+Doctor recommends only the medication -> 0.1
+
+Selected Parse:
+Doctor recommends both treatment and follow-up
+
+6. SUB-CATEGORIZATION FRAMES
+---------------------------------------------------------------------------
+review       -> Verb + Object
+recommend    -> Verb + Gerund Phrase
+start        -> Verb + Object
+schedule     -> Verb + Object
+
+7. SEMANTIC ROLE EXTRACTION
+---------------------------------------------------------------------------
+Agent                -> Doctor
+Previous Action      -> Reviewed patient
+Time                 -> Last week
+Main Action          -> Recommends
+Treatment            -> Starting medication
+Follow-up Action     -> Scheduling a follow-up visit
+Location             -> Chennai
+
+8. STRUCTURED CLINICAL OUTPUT
+---------------------------------------------------------------------------
+Diagnosis                 : Not explicitly mentioned
+Doctor                    : The doctor
+Previous Review           : Patient reviewed last week
+Recommended Treatment     : Start medication
+Follow-up                 : Schedule follow-up visit
+Location                  : Chennai
+
+===========================================================================
+FINAL RESULT
+===========================================================================
+NLP processing completed successfully.
+CFG       -> Syntactic structure identified
+PCFG      -> Most probable interpretation selected
+Features  -> Subject-verb agreement verified
+NER       -> Medical entities identified
+Semantics -> Medical relationships extracted
+Output    -> Structured clinical information generated
