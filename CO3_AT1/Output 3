@@ -1,0 +1,23 @@
+N = 1
+the student reads a report -> entropy = 3.201 bits
+the teacher checks a book -> entropy = 3.318 bits
+the student solves a problem -> entropy = 3.201 bits
+Average entropy = 3.240 bits
+
+N = 2
+the student reads a report -> entropy = 2.413 bits
+the teacher checks a book -> entropy = 2.506 bits
+the student solves a problem -> entropy = 2.413 bits
+Average entropy = 2.444 bits
+
+N = 3
+the student reads a report -> entropy = 2.746 bits
+the teacher checks a book -> entropy = 2.723 bits
+the student solves a problem -> entropy = 2.429 bits
+Average entropy = 2.633 bits
+
+Unsmoothed P(report | student reads) = 0.0
+If probability is 0, -log2(P) is undefined/infinite.
+
+Highest surprise: ('the student reads a report', 'report', 3.700439718141092)
+Lowest surprise : ('the student reads a report', 'student', 2.0874628412503395)
