@@ -1,0 +1,40 @@
+=================================================================
+VOICE ASSISTANT PARSING ANALYSIS
+=================================================================
+
+Input:
+Book a flight to Delhi with a window seat.
+
+Possible Parse Interpretations:
+Book a flight to Delhi and request a window seat
+Probability: 0.9
+
+Book a flight to Delhi, with the window-seat phrase as a separate modifier
+Probability: 0.1
+
+Most Probable Interpretation:
+Book a flight to Delhi and request a window seat
+
+Partial Input Processing:
+-----------------------------------------------------------------
+Input: Book
+Earley Parser Status: Partial parse maintained
+Input: Book a flight
+Earley Parser Status: Partial parse maintained
+Input: Book a flight to Delhi
+Earley Parser Status: Partial parse maintained
+Input: Book a flight to Delhi with
+Earley Parser Status: Partial parse maintained
+Input: Book a flight to Delhi with a window seat
+Earley Parser Status: Partial parse maintained
+
+Final Command:
+Destination: Delhi
+Seat Preference: Window
+
+Recommended Parser:
+Earley Parsing
+
+Reason:
+It handles ambiguity, partial input and complex grammar without
+the extensive backtracking associated with basic top-down parsing.
