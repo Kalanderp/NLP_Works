@@ -1,0 +1,23 @@
+Code:
+mentions = {
+    "He": ["John", "Mary", "dog"],
+    "She": ["John", "Mary", "dog"],
+    "it": ["ball", "park"],
+    "him": ["John", "Mary", "dog"],
+    "they": ["John+Mary", "John+Mary+dog"]
+}
+
+def resolve(m, candidates):
+    if m == "He": return [x for x in candidates if x in ("John", "dog")][0]
+    if m == "She": return "Mary"
+    if m == "it": return "ball"
+    if m == "him": return "John"  # semantic and coherence constraints
+    if m == "they": return "John+Mary+dog"
+
+resolved = {m: resolve(m, c) for m, c in mentions.items()}
+print(resolved)
+
+Output:
+{'He': 'John', 'She': 'Mary', 'it': 'ball', 'him': 'John',
+ 'they': 'John+Mary+dog'}
+ 
