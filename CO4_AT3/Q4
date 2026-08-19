@@ -1,0 +1,37 @@
+import nltk
+from nltk import FeatStruct
+ 
+# ---- Feature Structures: subject-verb agreement ----
+subj_ok = FeatStruct("[PERSON=3, NUMBER=sg]")
+verb_ok = FeatStruct("[PERSON=3, NUMBER=sg]")
+ 
+subj_bad = FeatStruct("[PERSON=3, NUMBER=sg]")
+verb_bad = FeatStruct("[PERSON=3, NUMBER=pl]")
+ 
+def check_agreement(subj, verb, sentence):
+    agrees = subj.unify(verb) is not None
+    print(f"'{sentence}' -> Subject {subj}  Verb {verb}")
+    print("Agreement valid?", agrees, "\n")
+ 
+print("---- Feature Structures: Subject-Verb Agreement ----")
+check_agreement(subj_ok, verb_ok, "She runs.")
+check_agreement(subj_bad, verb_bad, "She run.")
+ 
+# ---- Subcategorization Frames: verb argument structure ----
+subcat_frames = {
+    "eat": ["NP"],
+    "give": ["NP", "NP"],
+    "put": ["NP", "PP"],
+    "recommend": ["NP", "VP"],
+}
+ 
+def check_subcat(verb, provided_args, sentence):
+    required = subcat_frames.get(verb)
+    valid = required == provided_args
+    print(f"'{sentence}' -> {verb} requires {required}, got {provided_args}")
+    print("Argument structure valid?", valid, "\n")
+ 
+print("---- Subcategorization Frames: Verb Argument Structure ----")
+check_subcat("eat", ["NP"], "She eats food.")
+check_subcat("give", ["NP", "NP"], "She gave him a book.")
+check_subcat("give", ["NP"], "She gave him.")   # invalid: missing object
