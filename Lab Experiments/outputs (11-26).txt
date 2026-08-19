@@ -1,0 +1,136 @@
+11. Top-Down Parser
+the cat sees a dog => True
+cat sees dog => False
+
+12. Earley Parser
+the cat sees a dog => True
+the dog likes the cat => True
+
+13. Parse Tree
+Sentence: the cat sees a dog
+S
+  NP
+    Det
+      the
+    N
+      cat
+  VP
+    V
+      sees
+    NP
+      Det
+        a
+      N
+        dog
+
+14. Agreement Checking
+the boy runs => True
+the boys run => True
+the boy run => False
+the girls walks => False
+
+15. Probabilistic CFG Parsing
+the cat sees =>
+(0.15, ('S', ('NP', ('Det', 'the'), ('N', 'cat')), ('VP', ('V', 'sees'))))
+
+
+the dog likes =>
+(0.15, ('S', ('NP', ('Det', 'the'), ('N', 'dog')), ('VP', ('V', 'likes'))))
+
+16. SpaCy NER
+Text: Apple was founded by Steve Jobs in California. Microsoft is based in Redmond.
+
+
+Apple -> ORG
+Steve Jobs -> PERSON
+California -> GPE
+Microsoft -> ORG
+Redmond -> GPE
+
+17. WordNet
+Word: bank
+
+
+Synset: bank.n.01
+Definition: sloping land (especially the slope beside a body of water)
+
+
+Synset: bank.n.02
+Definition: a financial institution that accepts deposits and channels the money into lending activities
+
+
+Synset: bank.n.03
+Definition: a long ridge or pile
+
+
+Synset: bank.n.04
+Definition: an arrangement of similar objects in a row or in tiers
+
+
+Synset: bank.n.05
+Definition: a supply or stock held in reserve
+
+18. FOPC Parser
+P AND Q -> R =>
+('IMPLIES', ('AND', ('PREDICATE', 'P'), ('PREDICATE', 'Q')), ('PREDICATE', 'R'))
+
+
+NOT P OR Q =>
+('OR', ('NOT', ('PREDICATE', 'P')), ('PREDICATE', 'Q'))
+
+19. Lesk Word Sense Disambiguation
+Context: I deposited money in the bank to save it.
+
+
+Chosen sense: bank.n.04
+Definition: a building in which commercial banking is transacted
+
+20. TF-IDF Information Retrieval
+Query: friendly pets
+
+
+doc1 score = 0.6438
+doc3 score = 0.3219
+doc2 score = 0.2877
+
+21. Syntax-Driven Semantic Analysis
+Sentence: The smart student reads a book in the library.
+
+
+Noun phrase: the smart student
+Meaning: {'head': 'student'}
+
+
+Noun phrase: a book
+Meaning: {'head': 'book'}
+
+22. Reference Resolution
+Pronoun: He => John
+Pronoun: It => book
+
+23. Text Coherence Evaluation
+Text: The weather was rainy. The rain made the roads wet. Therefore, traffic moved slowly.
+
+
+Coherence score (0-1): 0.12
+
+24. Dialog Act Recognition
+Hello! => GREETING
+Can you tell me the lab timing? => QUESTION
+Please send me the notes. => REQUEST
+Thank you! => THANKING
+Goodbye! => GOODBYE
+
+25. GPT Text Generation
+Prompt: Write a short paragraph about artificial intelligence in education.
+
+
+Generated text:
+Artificial intelligence can support education by personalizing learning,
+providing feedback, and helping teachers analyze student progress.
+
+26. English → French Translation
+English: Artificial intelligence is changing the way we learn.
+
+
+French: L'intelligence artificielle change la façon dont nous apprenons.
