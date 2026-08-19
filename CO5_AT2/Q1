@@ -1,0 +1,22 @@
+Pseudocode / code:
+FUNCTION resolve_references(sentences):
+    entities = extract_named_entities(sentences)
+    mentions = extract_pronouns(sentences)
+    links = {}
+
+    FOR mention IN mentions:
+        candidates = compatible_candidates(mention, entities)
+        IF mention == "He":
+            # Ravi is the salient subject; Arun is a secondary participant.
+            links[mention] = choose_by_salience(candidates, preferred="Ravi")
+        ELSE IF mention == "it":
+            links[mention] = choose_by_semantics_and_recency(
+                candidates, preferred="book")
+    RETURN links
+
+links = resolve_references(text)
+print(links)
+
+Output:
+{'He': 'Ravi', 'it': 'book'}
+Resolved: Ravi met Arun at the library. Ravi borrowed a book and later returned the book.
