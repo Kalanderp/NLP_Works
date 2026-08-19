@@ -1,0 +1,63 @@
+import nltk
+from nltk import CFG, PCFG
+ 
+sentence = "she saw the man with the telescope".split()
+ 
+# ---- 1. Plain CFG: generates ALL structurally possible parses ----
+cfg = CFG.fromstring("""
+S -> NP VP
+NP -> Pronoun | Det N | NP PP
+VP -> V NP | VP PP
+PP -> P NP
+Pronoun -> 'she'
+Det -> 'the'
+N -> 'man' | 'telescope'
+V -> 'saw'
+P -> 'with'
+""")
+ 
+print("---- CFG: all syntactically valid parses (ambiguous) ----")
+cfg_parser = nltk.ChartParser(cfg)
+cfg_trees = list(cfg_parser.parse(sentence))
+for i, t in enumerate(cfg_trees, 1):
+    print(f"\nParse {i}:")
+    print(t)
+ 
+# ---- 2. PCFG: ranks the same parses using probabilities ----
+pcfg = PCFG.fromstring("""
+S -> NP VP [1.0]
+NP -> Pronoun [0.3] | Det N [0.3] | NP PP [0.4]
+VP -> V NP [0.6] | VP PP [0.4]
+PP -> P NP [1.0]
+Pronoun -> 'she' [1.0]
+Det -> 'the' [1.0]
+N -> 'man' [0.5] | 'telescope' [0.5]
+V -> 'saw' [1.0]
+P -> 'with' [1.0]
+""")
+ 
+print("\n---- PCFG: parses ranked by probability ----")
+pcfg_parser = nltk.ViterbiParser(pcfg)
+for t in pcfg_parser.parse(sentence):
+    print(t)
+    print("Probability:", t.prob())
+ 
+# ---- 3. Neural Parsing (simulated): context-weighted scoring ----
+def neural_style_score(attachment, context_keywords):
+    """Simulates a neural model preferring the interpretation whose
+    context words co-occur more often with the verb (learned pattern)."""
+    weights = {"VP": 0.0, "NP": 0.0}
+    for kw in context_keywords:
+        if kw in ("saw", "used", "look"):
+            weights["VP"] += 1.0
+        if kw in ("man", "had", "carrying"):
+            weights["NP"] += 1.0
+    return weights
+ 
+print("\n---- Neural Parsing (simulated contextual scoring) ----")
+context = ["saw", "man", "had", "carrying"]  # words the model attends to
+scores = neural_style_score("PP-attachment", context)
+best = max(scores, key=scores.get)
+print("Learned attention weights:", scores)
+print("Model prediction: PP attaches to", "VP (she used the telescope)" if best == "VP"
+      else "NP (the man had the telescope)")
