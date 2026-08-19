@@ -1,0 +1,17 @@
+---- CFG Parse Tree ----
+                  S                   
+      ____________|_____               
+     |                  VP            
+     |             _____|___           
+     NP           |         NP        
+  ___|_____       |      ___|_____     
+Det        N      V    Det        N   
+ |         |      |     |         |    
+the     student solved the     problem
+ 
+ 
+---- Dependency Parse (word -> word : relation) ----
+solved -> student : nsubj
+solved -> problem : obj
+student -> the : det
+problem -> the : det
