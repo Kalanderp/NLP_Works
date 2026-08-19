@@ -1,0 +1,18 @@
+Pseudocode / code:
+FUNCTION classify(utterance, speaker):
+    text = lowercase(utterance)
+    IF "can you" IN text AND any(word IN text FOR word IN ["book", "reserve"]):
+        RETURN "Request"
+    IF speaker == "Agent" AND "where" IN text:
+        RETURN "Question"
+    IF "want to go to" IN text OR contains_location(text):
+        RETURN "Inform"
+    IF speaker == "Agent" AND any(word IN text FOR word IN ["booked", "confirmed"]):
+        RETURN ["Confirmation", "Action"]
+
+acts = [classify(u, s) FOR (s, u) IN conversation]
+print(acts)
+
+Output:
+['Request', 'Question', 'Inform', ['Confirmation', 'Action']]
+Intent frame: book_ticket(destination='Chennai')
