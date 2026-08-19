@@ -1,0 +1,29 @@
+Code:
+sentence = {
+    "word": "bank",
+    "location": "river",
+    "event": "flooded",
+    "discourse_relation": "Contrast",
+    "pronoun": "it"
+}
+
+def wsd(s):
+    senses = {"financial_bank": 0, "riverbank": 0}
+    if s["location"] == "river": senses["riverbank"] += 2
+    if s["event"] == "flooded": senses["riverbank"] += 2
+    return max(senses, key=senses.get)
+
+sense = wsd(sentence)
+predicate_logic = (
+    "riverbank(b) AND river(r) AND by(b,r) AND storm(s) AND "
+    "after(flood_event(b),s) AND flooded(b) AND saved(b,quick_action) "
+    "AND Contrast(flooded(b), saved(b,quick_action))"
+)
+print("Sense:", sense)
+print("Logic:", predicate_logic)
+print("Paraphrase: The riverbank beside the river was flooded after the storm; however, prompt action protected it from further damage.")
+
+Output:
+Sense: riverbank
+Logic: riverbank(b) AND river(r) AND by(b,r) AND storm(s) AND after(flood_event(b),s) AND flooded(b) AND saved(b,quick_action) AND Contrast(flooded(b), saved(b,quick_action))
+Paraphrase: The riverbank beside the river was flooded after the storm; however, prompt action protected it from further damage.
