@@ -1,0 +1,22 @@
+---- Transition-Based Parsing (Arc-Standard) ----
+Action sequence: ['SHIFT', 'SHIFT', 'LEFT-ARC', 'SHIFT', 'LEFT-ARC', 'SHIFT', 'SHIFT', 'LEFT-ARC', 'RIGHT-ARC', 'RIGHT-ARC']
+Dependency arcs (head -> dependent):
+  student -> The  (LEFT-ARC)
+  solved -> student  (LEFT-ARC)
+  problem -> the  (LEFT-ARC)
+  solved -> problem  (RIGHT-ARC)
+  ROOT -> solved  (RIGHT-ARC)
+Time taken: 12.98 microseconds  |  Decisions: O(n)
+ 
+---- Graph-Based Parsing (Maximum Spanning Tree) ----
+All candidate arcs scored: 25
+Highest-scoring dependency tree:
+  ROOT -> solved  (score=10.000000000000002)
+  student -> The  (score=8.000000000000002)
+  solved -> problem  (score=9.000000000000002)
+  solved -> student  (score=9.000000000000002)
+  problem -> the  (score=8.000000000000002)
+Time taken: 1979.03 microseconds  |  Search space: O(n^2) or higher
+ 
+---- Summary ----
+Candidate arcs considered  -> Transition-based: 10 actions | Graph-based: 25 scored arcs
