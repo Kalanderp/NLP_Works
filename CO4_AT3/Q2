@@ -1,0 +1,44 @@
+import nltk
+from nltk import CFG
+ 
+grammar = CFG.fromstring("""
+S -> VP
+VP -> V NP
+VP -> V NP PP
+NP -> Det N
+PP -> P NP
+NP -> N
+Det -> 'a' | 'the'
+N -> 'flight' | 'delhi' | 'agent'
+V -> 'book'
+P -> 'to' | 'with'
+""")
+ 
+full_sentence = "book a flight to delhi".split()
+partial_input = "book a flight".split()   # incomplete input
+ 
+# ---- Top-Down Parsing (Recursive Descent) ----
+print("---- Top-Down Parser on FULL input ----")
+rd_parser = nltk.RecursiveDescentParser(grammar)
+for tree in rd_parser.parse(full_sentence):
+    print(tree)
+ 
+print("\n---- Top-Down Parser on INCOMPLETE input ----")
+try:
+    results = list(rd_parser.parse(partial_input))
+    if not results:
+        print("FAILS: no complete parse tree, no partial state retained")
+except Exception as e:
+    print("Error:", e)
+ 
+# ---- Earley Parsing ----
+print("\n---- Earley Parser on FULL input ----")
+earley_parser = nltk.EarleyChartParser(grammar)
+for tree in earley_parser.parse(full_sentence):
+    print(tree)
+ 
+print("\n---- Earley Parser Chart States on INCOMPLETE input ----")
+chart = earley_parser.chart_parse(partial_input)
+print(f"Chart retains {len(list(chart.edges()))} partial edges (states) even though input is incomplete:")
+for edge in list(chart.edges())[:8]:
+    print(" ", edge)
