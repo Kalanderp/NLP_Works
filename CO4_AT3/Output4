@@ -1,0 +1,20 @@
+---- Feature Structures: Subject-Verb Agreement ----
+'She runs.' -> Subject [ NUMBER = 'sg' ]
+[ PERSON = 3    ]  Verb [ NUMBER = 'sg' ]
+[ PERSON = 3    ]
+Agreement valid? True 
+ 
+'She run.' -> Subject [ NUMBER = 'sg' ]
+[ PERSON = 3    ]  Verb [ NUMBER = 'pl' ]
+[ PERSON = 3    ]
+Agreement valid? False 
+ 
+---- Subcategorization Frames: Verb Argument Structure ----
+'She eats food.' -> eat requires ['NP'], got ['NP']
+Argument structure valid? True 
+ 
+'She gave him a book.' -> give requires ['NP', 'NP'], got ['NP', 'NP']
+Argument structure valid? True 
+ 
+'She gave him.' -> give requires ['NP', 'NP'], got ['NP']
+Argument structure valid? False 
