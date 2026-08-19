@@ -1,0 +1,18 @@
+---- Top-Down Parser on FULL input ----
+(S (VP (V book) (NP (Det a) (N flight)) (PP (P to) (NP (N delhi)))))
+ 
+---- Top-Down Parser on INCOMPLETE input ----
+ 
+---- Earley Parser on FULL input ----
+(S (VP (V book) (NP (Det a) (N flight)) (PP (P to) (NP (N delhi)))))
+ 
+---- Earley Parser Chart States on INCOMPLETE input ----
+Chart retains 22 partial edges (states) even though input is incomplete:
+  [0:0] S  -> * VP
+  [0:0] VP -> * V NP
+  [0:0] VP -> * V NP PP
+  [0:0] V  -> * 'book'
+  [0:1] 'book'
+  [0:1] V  -> 'book' *
+  [0:1] VP -> V * NP
+  [0:1] VP -> V * NP PP
