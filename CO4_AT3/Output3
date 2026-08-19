@@ -1,0 +1,31 @@
+---- CFG: all syntactically valid parses (ambiguous) ----
+ 
+Parse 1:
+(S
+  (NP (Pronoun she))
+  (VP
+    (VP (V saw) (NP (Det the) (N man)))
+    (PP (P with) (NP (Det the) (N telescope)))))
+ 
+Parse 2:
+(S
+  (NP (Pronoun she))
+  (VP
+    (V saw)
+    (NP
+      (NP (Det the) (N man))
+      (PP (P with) (NP (Det the) (N telescope))))))
+ 
+---- PCFG: parses ranked by probability ----
+(S
+  (NP (Pronoun she))
+  (VP
+    (V saw)
+    (NP
+      (NP (Det the) (N man))
+      (PP (P with) (NP (Det the) (N telescope)))))) (p=0.00162)
+Probability: 0.0016199999999999997
+ 
+---- Neural Parsing (simulated contextual scoring) ----
+Learned attention weights: {'VP': 1.0, 'NP': 3.0}
+Model prediction: PP attaches to NP (the man had the telescope)
