@@ -1,0 +1,31 @@
+import nltk
+from nltk import CFG
+cfg = CFG.fromstring("""
+S -> NP VP
+NP -> Det N
+VP -> V NP
+Det -> 'the'
+N -> 'student' | 'problem'
+V -> 'solved'
+""")
+ 
+sentence = "the student solved the problem".split()
+parser = nltk.ChartParser(cfg)
+ 
+print("---- CFG Parse Tree ----")
+for tree in parser.parse(sentence):
+    tree.pretty_print()
+def dependency_parse(sent_tokens):
+    # very small rule-based dependency extractor for SVO sentences
+    det, subj, verb, det2, obj = sent_tokens
+    deps = [
+        (verb, subj, "nsubj"),
+        (verb, obj, "obj"),
+        (subj, det, "det"),
+        (obj, det2, "det"),
+    ]
+    return deps
+ 
+print("\n---- Dependency Parse (word -> word : relation) ----")
+for head, dep, rel in dependency_parse(sentence):
+    print(f"{head} -> {dep} : {rel}")
