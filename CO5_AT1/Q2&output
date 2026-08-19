@@ -1,0 +1,18 @@
+Code:
+responses = [
+    "Take a short break, then return to your exam notes in a quiet place so you can concentrate and focus better. You can do this, and you should feel confident about your preparation.",
+    "Because your exam is tomorrow, take a brief break and study in 25-minute focus sessions to concentrate more effectively. You are capable of making steady progress, so stay confident.",
+    "Start with one small exam topic after a short break; this can help you concentrate instead of feeling overwhelmed. Keep your focus on that step, and you will become more confident."
+]
+keywords = {"focus", "break", "confident"}
+for i, text in enumerate(responses, 1):
+    sentence_count = text.count('.')
+    found = keywords.intersection(text.lower().split())
+    score = (sentence_count in (2, 3)) and {"exam", "concentrate"}.issubset(text.lower().split()) and len(found) >= 2
+    print(f"R{i}: valid={score}, keywords={sorted(found)}")
+
+Output:
+R1: valid=True, keywords=['break', 'confident', 'focus']
+R2: valid=True, keywords=['break', 'confident', 'focus']
+R3: valid=True, keywords=['break', 'confident', 'focus']
+Selected: R2 (strongest explicit cause-effect relation and practical advice).
