@@ -1,0 +1,20 @@
+Pseudocode / code:
+FUNCTION analyze_coherence(sentences):
+    relations = []
+    FOR i FROM 0 TO length(sentences) - 2:
+        current = sentences[i]
+        next = sentences[i + 1]
+        IF contains_cause_marker(next, ["therefore", "because", "so"]):
+            relation = "CAUSE-EFFECT"
+        ELSE IF shares_topic(current, next) AND describes_following_event(current, next):
+            relation = "RESULT-CONTINUATION"
+        ELSE:
+            relation = "ELABORATION"
+        relations.append((i + 1, i + 2, relation))
+    RETURN relations
+
+print(analyze_coherence(discourse))
+
+Output:
+[(1, 2, 'CAUSE-EFFECT'), (2, 3, 'RESULT-CONTINUATION')]
+Discourse: heavy rainfall -> flooded roads -> schools closed -> online classes
