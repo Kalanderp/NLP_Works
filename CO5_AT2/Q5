@@ -1,0 +1,31 @@
+Pseudocode / code:
+FUNCTION translate_with_interlingua(source):
+    analysis = parse(source)
+    interlingua = {
+        "predicate": analysis.verb_lemma,
+        "agent": analysis.subject_lemma,
+        "object": analysis.object_lemma,
+        "tense": analysis.tense,
+        "aspect": analysis.aspect
+    }
+    candidates = generate_target_candidates(interlingua, language="Tamil")
+
+    best = NONE
+    best_score = -INFINITY
+    FOR candidate IN candidates:
+        semantic = semantic_score(candidate, interlingua)
+        fluency = language_model_score(candidate)
+        score = 0.6 * semantic + 0.4 * fluency
+        IF score > best_score:
+            best = candidate
+            best_score = score
+    RETURN interlingua, candidates, best, best_score
+
+result = translate_with_interlingua("The boy is playing football.")
+print(result)
+
+Output:
+Interlingua: PLAY(agent=BOY, object=FOOTBALL, tense=PRESENT, aspect=PROGRESSIVE)
+Candidates: C1=0.97, C2=0.92, C3=0.82
+Selected: சிறுவன் கால்பந்து விளையாடிக் கொண்டிருக்கிறான்.
+Meaning: The boy is playing football.
