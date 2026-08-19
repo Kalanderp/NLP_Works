@@ -1,0 +1,73 @@
+import time
+import networkx as nx
+ 
+sentence = ["ROOT", "The", "student", "solved", "the", "problem"]
+ 
+# ---- Transition-Based Parsing (Arc-Standard shift-reduce simulation) ----
+def transition_based_parse(tokens):
+    stack = [0]          # start with ROOT index
+    buffer = list(range(1, len(tokens)))
+    arcs = []
+    actions = []
+ 
+    # Hand-crafted action sequence for this sentence structure
+    # The(1) student(2) solved(3) the(4) problem(5)
+    script = ["SHIFT", "SHIFT", "LEFT-ARC", "SHIFT", "LEFT-ARC",
+              "SHIFT", "SHIFT", "LEFT-ARC", "RIGHT-ARC", "RIGHT-ARC"]
+ 
+    seq = iter(script)
+    while buffer or len(stack) > 1:
+        action = next(seq)
+        actions.append(action)
+        if action == "SHIFT":
+            stack.append(buffer.pop(0))
+        elif action == "LEFT-ARC":
+            dep = stack.pop(-2)
+            head = stack[-1]
+            arcs.append((tokens[head], tokens[dep], "LEFT-ARC"))
+        elif action == "RIGHT-ARC":
+            dep = stack.pop()
+            head = stack[-1]
+            arcs.append((tokens[head], tokens[dep], "RIGHT-ARC"))
+    return actions, arcs
+ 
+print("---- Transition-Based Parsing (Arc-Standard) ----")
+start = time.perf_counter()
+actions, arcs = transition_based_parse(sentence)
+elapsed_transition = time.perf_counter() - start
+print("Action sequence:", actions)
+print("Dependency arcs (head -> dependent):")
+for head, dep, kind in arcs:
+    print(f"  {head} -> {dep}  ({kind})")
+print(f"Time taken: {elapsed_transition*1e6:.2f} microseconds  |  Decisions: O(n)")
+ 
+# ---- Graph-Based Parsing (Maximum Spanning Tree over scored arcs) ----
+def score(head, dep):
+    # simulated scoring function (would be learned weights in a real model)
+    table = {
+        ("ROOT", "solved"): 10, ("solved", "student"): 9, ("solved", "problem"): 9,
+        ("student", "The"): 8, ("problem", "the"): 8,
+        ("ROOT", "student"): 2, ("student", "solved"): 1, ("problem", "student"): 1,
+    }
+    return table.get((head, dep), 0.1)
+ 
+print("\n---- Graph-Based Parsing (Maximum Spanning Tree) ----")
+G = nx.DiGraph()
+words = sentence  # ROOT, The, student, solved, the, problem
+for h in words:
+    for d in words:
+        if h != d and d != "ROOT":
+            G.add_edge(h, d, weight=score(h, d))
+ 
+start = time.perf_counter()
+mst = nx.maximum_spanning_arborescence(G)
+elapsed_graph = time.perf_counter() - start
+ 
+print("All candidate arcs scored:", G.number_of_edges())
+print("Highest-scoring dependency tree:")
+for h, d in mst.edges():
+    print(f"  {h} -> {d}  (score={G[h][d]['weight']})")
+print(f"Time taken: {elapsed_graph*1e6:.2f} microseconds  |  Search space: O(n^2) or higher")
+ 
+print("\n---- Summary ----")
+print(f"Candidate arcs considered  -> Transition-based: {len(actions)} actions | Graph-based: {G.number_of_edges()} scored arcs")
