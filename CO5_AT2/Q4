@@ -1,0 +1,20 @@
+Pseudocode / code:
+FUNCTION surface_realize(semantic_input):
+    subject = "The " + semantic_input.Agent.lower()
+    object_phrase = "a " + semantic_input.Object.lower()
+
+    IF semantic_input.Action == "Buy" AND semantic_input.Tense == "Past":
+        verb = "bought"
+    ELSE:
+        verb = lexicalize(semantic_input.Action, semantic_input.Tense)
+
+    sentence = subject + " " + verb + " " + object_phrase + "."
+    RETURN grammatical_check(sentence)
+
+semantic_input = {"Action":"Buy", "Agent":"Student",
+                  "Object":"Book", "Tense":"Past"}
+print(surface_realize(semantic_input))
+
+Output:
+The student bought a book.
+Validation: grammatical = True; tense = past; structure = SVO
