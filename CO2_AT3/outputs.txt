@@ -1,0 +1,56 @@
+DSA03 NLP ERROR ANALYSIS — VERIFIED OUTPUTS
+
+Question 1
+[('infection', 'infect'), ('infectious', 'infecti'), ('infected', 'infect'), ('infect', 'infect')]
+
+Question 2
+happiest ([ ], 'happy', ['est'])
+unbelievable (['un'], 'believe', ['able'])
+running ([ ], 'run', ['ing'])
+reordering (['re'], 'order', ['ing'])
+smartphones ([ ], 'smartphone', ['s'])
+unreadable (['un'], 'read', ['able'])
+Baseline accuracy: 2/6 = 33.3%
+Corrected parser accuracy: 6/6 = 100%
+
+Question 3
+none 11
+porter 8
+lemma 10
+
+Question 4
+watches -> watch
+watching -> watch
+washable -> washable
+washer -> washer
+washed -> wash
+
+Question 5
+Representative Porter outputs:
+connected -> connect
+connection -> connect
+connecting -> connect
+connectivity -> connect
+organization -> organ
+organizer -> organ
+organizing -> organ
+organized -> organ
+studies -> studi
+studied -> studi
+studying -> studi
+
+Question 6
+cars -> ('car', 'Plural Noun (regular)')
+boxes -> ('box', 'Plural Noun (-es)')
+cities -> ('city', 'Plural Noun (-ies)')
+children -> ('child', 'Plural Noun (irregular)')
+class -> ('class', 'Singular')
+books -> ('book', 'Plural Noun (regular)')
+
+Question 7
+before 9
+after 4
+features ['organ', 'run', 'runner', 'studi']
+time_ms: approximately 1–3 ms on the controlled example; varies by machine.
+
+The code is designed to be rerun with the named public datasets by updating the dataset paths.
